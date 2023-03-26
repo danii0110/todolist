@@ -22,6 +22,13 @@ body {
     box-shadow: 5px 5px 5px purple;
 }
 
+.title {
+    
+}
+
+.inputField {
+    width: 435px;
+}
 .content {
     display: flex;
     flex-direction: column;
@@ -40,10 +47,4 @@ h1 {
 ul {
     font-weight: bold;
     color: purple;
-}
-
-.border-line {
-    width: 550px;
-    color: black;
-    border: bold;
 }
