@@ -2,26 +2,55 @@ let inputBox = document.getElementById('inputField');  // 할 일 입력창
 let addToDo = document.getElementById('addToDo');      // 버튼
 let toDoList = document.getElementById('toDoList');    // 할 일 리스트창
 
- //할 일 목록을 저장하기 위한 배열
- //push를 사용하기 위해 array로 선언
-const toDo = [];
+//할 일 목록을 array로 선언
+const toDos = [];
 
-addToDo.addEventListener('click', function() {
+//할 일을 담은 객체 선언
+
+
+function addTodo() {
     const createLi = document.createElement('li'); //html 'li' 태그 만들기
     const deleteBtn = document.createElement('button'); //html button 만들기 //x 버튼 만들것임
     deleteBtn.innertext = "x";
     const span = document.createElement("span");
     span.innerText = text;
 
-    //to do를 생성할 때마다 toDo array에 추가
-    const toDoAppend = {
-        text: text,
-        id: toDos.length+1
-    };
+    const toDoObject = {
+        index: index,
+        content: content,
+        check: check,
+    }
 
-    //push를 사용하여 array안에 넣어줌
-    toDo.push(toDoAppend); 
-})
+    toDos.push(toDoObject);
+} 
+
+function loadTodo() {
+    const loadedToDo = localStorage.getItem(TODOS_LS);
+// 기존에 입력한 변수명인 toDos를 loadedToDos로 변경하는 이유 : 위에서 전역 변수로 새로 선언한 toDos와 헷갈려 오류가 발생할 수 있기 때문이다.
+    if (loadedToDos !== null) {
+    }
+}
+
+//  //할 일 목록을 저장하기 위한 배열
+//  //push를 사용하기 위해 array로 선언
+// const toDo = [];
+
+// addToDo.addEventListener('click', function() {
+//     const createLi = document.createElement('li'); //html 'li' 태그 만들기
+//     const deleteBtn = document.createElement('button'); //html button 만들기 //x 버튼 만들것임
+//     deleteBtn.innertext = "x";
+//     const span = document.createElement("span");
+//     span.innerText = text;
+
+//     //to do를 생성할 때마다 toDo array에 추가
+//     const toDoAppend = {
+//         text: text,
+//         id: toDos.length+1
+//     };
+
+//     //push를 사용하여 array안에 넣어줌
+//     toDo.push(toDoAppend); 
+//})
 
 
 
