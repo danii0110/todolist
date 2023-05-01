@@ -6,23 +6,35 @@ let toDoList = document.getElementById('toDoList');    // 할 일 리스트창
 const toDos = [];
 
 //할 일을 담은 객체 선언
+const toDoObject = {
+    index: Number,
+    content: String,
+    check: Boolean,
+}
 
+//toDos array의 총 개수
+let count=0;
 
-function addTodo() {
-    const createLi = document.createElement('li'); //html 'li' 태그 만들기
-    const deleteBtn = document.createElement('button'); //html button 만들기 //x 버튼 만들것임
-    deleteBtn.innertext = "x";
-    const span = document.createElement("span");
-    span.innerText = text;
+function add() {
+    const newInput = document.getElementById("inputBox").value;
 
-    const toDoObject = {
-        index: index,
-        content: content,
-        check: check,
+    const newObj = {
+        index: count++,
+        content: newInput,
+        check: false,
     }
+}
+// function addTodo() {
+//     const createLi = document.createElement('li'); //html 'li' 태그 만들기
+//     const deleteBtn = document.createElement('button'); //html button 만들기 //x 버튼 만들것임
+//     deleteBtn.innertext = "x";
+//     const span = document.createElement("span");
+//     span.innerText = text;
 
-    toDos.push(toDoObject);
-} 
+    
+
+//     toDos.push(toDoObject);
+// } 
 
 function loadTodo() {
     const loadedToDo = localStorage.getItem(TODOS_LS);
